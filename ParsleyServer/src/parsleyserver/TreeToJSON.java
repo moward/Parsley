@@ -1,4 +1,4 @@
-package parselyserver;
+package parsleyserver;
 
 import org.json.simple.*;
 
@@ -33,5 +33,16 @@ public class TreeToJSON {
 		}
 		
 		return obj;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static JSONArray TreesToJSON(Iterable<Tree> trees) {
+		JSONArray arr = new JSONArray();
+		
+		for (Tree t: trees) {
+			arr.add(ConvertToJSON(t));
+		}
+		
+		return arr;
 	}
 }
